@@ -1,0 +1,9 @@
+- [主页](/)
+- [开始使用](getting-started.md)
+- 插件文档
+  - [安装指南](installation.md)
+  - [基本配置](configuration.md)
+  - [使用方法](usage.md)
+- [API参考](api-reference.md)
+- [常见问题](faq.md)
+- [更新日志](changelog.md) 
