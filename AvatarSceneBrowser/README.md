@@ -23,4 +23,11 @@ Avatar Scene Browser是一个专为Unity开发的工具插件，旨在简化虚�
 ## 适用版本
 
 - Unity 2020.3 LTS 及以上版本
-- 支持 URP/HDRP/Built-in 渲染管线 
+- 支持 URP/HDRP/Built-in 渲染管线
+- 支持Windows/macOS/Linux编辑器环境
+
+## 文档使用说明
+
+本文档使用[docsify](https://docsify.js.org/#/zh-cn/)构建，您可以通过左侧的侧边栏导航来浏览不同章节。各章节可以展开或折叠以便于查找所需内容。
+
+如有任何问题或建议，请通过[GitHub Issues](https://github.com/cynth-mt/cynth-mt.github.io/issues)向我们反馈。 

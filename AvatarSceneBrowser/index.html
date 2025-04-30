@@ -20,6 +20,11 @@
       loadNavbar: true,
       subMaxLevel: 3,
       auto2top: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
+      },
+      sidebarDisplayLevel: 1, // 设置默认展开层级
       search: {
         maxAge: 86400000,
         paths: 'auto',
@@ -56,6 +61,51 @@
             
             next(html + footer);
           });
+          
+          // 侧边栏展开/折叠插件
+          hook.doneEach(function() {
+            const sidebarDisplayLevel = $docsify.sidebarDisplayLevel || 1;
+            // 获取侧边栏所有标题
+            const sidebar = document.querySelector('.sidebar-nav');
+            if (sidebar) {
+              const allLis = sidebar.querySelectorAll('li');
+              for (let i = 0; i < allLis.length; i++) {
+                const li = allLis[i];
+                const ul = li.querySelector('ul');
+                if (ul) {
+                  // 添加展开/折叠按钮
+                  const firstSpan = li.querySelector('span') || li.querySelector('a');
+                  if (firstSpan) {
+                    firstSpan.style.cursor = 'pointer';
+                    firstSpan.classList.add('folder-parent');
+                    
+                    // 默认展开指定层级
+                    const level = parseInt(firstSpan.getAttribute('data-level') || '1');
+                    if (level <= sidebarDisplayLevel) {
+                      ul.style.display = 'block';
+                      firstSpan.classList.add('open');
+                    } else {
+                      ul.style.display = 'none';
+                      firstSpan.classList.remove('open');
+                    }
+                    
+                    // 添加点击事件
+                    firstSpan.onclick = function(e) {
+                      if (ul.style.display === 'none') {
+                        ul.style.display = 'block';
+                        firstSpan.classList.add('open');
+                      } else {
+                        ul.style.display = 'none';
+                        firstSpan.classList.remove('open');
+                      }
+                      e.preventDefault();
+                      e.stopPropagation();
+                    };
+                  }
+                }
+              }
+            }
+          });
         }
       ],
       // 分页导航
@@ -81,5 +131,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-plugin-toc"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+  <!-- 添加 docsify-sidebar-collapse 插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
