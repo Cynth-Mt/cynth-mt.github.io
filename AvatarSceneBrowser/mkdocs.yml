@@ -10,50 +10,146 @@ edit_uri: edit/main/AvatarSceneBrowser/docs/
 theme:
   name: material
   language: zh
+  logo: assets/logo.png
+  favicon: assets/favicon.png
   palette:
-    - scheme: default
-      primary: teal
-      accent: teal
+    # 亮色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: 切换到暗色模式
-    - scheme: slate
-      primary: teal
-      accent: teal
+    # 暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/brightness-4
         name: 切换到亮色模式
   features:
+    # 导航功能
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
+    - navigation.path
     - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    # 搜索功能
     - search.highlight
     - search.share
+    - search.suggest
+    # 目录功能
+    - toc.follow
     - toc.integrate
+    # 内容功能
     - content.code.annotate
     - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    # 页脚导航
+    - navigation.footer
 
 plugins:
   - search:
-      lang: ja
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang: 
+        - zh
+        - ja
+        - en
   - git-revision-date-localized:
-      type: date
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
 
 markdown_extensions:
+  # 代码高亮
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  
+  # 标签页和详情
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.details
+  
+  # 提示框
   - admonition
+  - pymdownx.blocks.admonition:
+      types:
+      - new
+      - settings
+      - note
+      - abstract
+      - info
+      - tip
+      - success
+      - question
+      - warning
+      - failure
+      - danger
+      - bug
+      - example
+      - quote
+  
+  # 任务列表和键盘按键
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+  
+  # 数学公式
+  - pymdownx.arithmatex:
+      generic: true
+  
+  # 表情符号和图标
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+  # 其他扩展
   - attr_list
   - md_in_html
+  - def_list
+  - footnotes
+  - abbr
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  
+  # 目录
   - toc:
       permalink: true
+      permalink_title: 锚点链接
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 nav:
   - 主页: index.md
@@ -81,6 +177,36 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cynth-mt
+      name: GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/cynth_mt
+      name: Twitter
+  analytics:
+    feedback:
+      title: 这个页面有帮助吗？
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: 这个页面很有帮助
+          data: 1
+          note: >-
+            感谢您的反馈！
+        - icon: material/emoticon-sad-outline
+          name: 这个页面可以改进
+          data: 0
+          note: >-
+            感谢您的反馈！请通过GitHub Issues告诉我们如何改进。
   generator: false
+  version:
+    provider: mike
 
-copyright: Copyright &copy; 2023-present Cynth-mt 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: |
+  Copyright &copy; 2023-present <a href="https://github.com/cynth-mt" target="_blank" rel="noopener">Cynth-mt</a> –
+  <a href="#__consent">更改cookie设置</a> 

@@ -1,7 +1,43 @@
 # Avatar Scene Browser 插件文档
 
-!!! info "插件简介"
-    Avatar Scene Browser是一个专为Unity开发的工具插件，旨在简化虚拟化身和场景的管理、预览和使用流程。
+<div class="grid cards" markdown>
+
+-   :fontawesome-solid-rocket:{ .lg .middle } __快速开始__
+
+    ---
+
+    几分钟内即可安装并开始使用Avatar Scene Browser
+
+    [:octicons-arrow-right-24: 开始使用](getting-started.md)
+
+-   :fontawesome-solid-cubes:{ .lg .middle } __功能丰富__
+
+    ---
+
+    支持多种化身格式，提供完整的场景管理解决方案
+
+    [:octicons-arrow-right-24: 功能模块](avatar-management.md)
+
+-   :fontawesome-solid-code:{ .lg .middle } __开发友好__
+
+    ---
+
+    提供完整的API文档和示例代码
+
+    [:octicons-arrow-right-24: API参考](api-reference.md)
+
+-   :fontawesome-solid-heart:{ .lg .middle } __开源免费__
+
+    ---
+
+    MIT许可证，完全免费使用和修改
+
+    [:octicons-arrow-right-24: GitHub](https://github.com/cynth-mt/cynth-mt.github.io)
+
+</div>
+
+!!! tip "插件简介"
+    Avatar Scene Browser是一个专为Unity开发的工具插件，旨在简化虚拟化身和场景的管理、预览和使用流程。无论您是独立开发者还是大型团队，都能从中受益。
 
 ## 主要功能
 
