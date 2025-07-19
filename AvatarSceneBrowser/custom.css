@@ -3,8 +3,6 @@
 :root {
   --theme-color: #42b983;
   --sidebar-width: 300px;
-  --heading-h3-color: #6a8bad;
-  --heading-h4-color: #8aa6c1;
 }
 
 /* 导航样式 */
@@ -22,70 +20,8 @@
 .sidebar {
   padding-top: 70px;
   border-right: 1px solid #eee;
-  color: #364149;
 }
 
-.sidebar-nav {
-  padding: 0 8px;
-}
-
-.sidebar-nav > ul {
-  margin: 0;
-  padding: 0;
-}
-
-/* 侧边栏标题样式 */
-.sidebar-nav > ul > li {
-  margin: 6px 0;
-}
-
-.sidebar-nav ul li a {
-  color: #505d6b;
-  font-size: 14px;
-  font-weight: normal;
-  overflow: hidden;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 6px 0;
-  display: block;
-}
-
-/* 侧边栏分组标题 */
-.sidebar-nav ul li.folder-parent > a,
-.sidebar-nav ul li > span {
-  font-weight: 600;
-  color: #2c3e50;
-  display: block;
-  padding: 6px 0;
-  position: relative;
-}
-
-/* 侧边栏展开/折叠图标 */
-.sidebar-nav li.folder-parent > a:before,
-.sidebar-nav li > span:before {
-  content: '';
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 8px;
-  border-color: transparent transparent transparent #7f8c8d;
-  margin-right: 6px;
-  transition: transform 0.2s;
-}
-
-.sidebar-nav li.folder-parent > a.open:before,
-.sidebar-nav li > span.open:before {
-  transform: rotate(90deg);
-}
-
-/* 侧边栏子项缩进 */
-.sidebar-nav ul ul {
-  padding-left: 20px;
-}
-
-/* 激活的菜单项 */
 .sidebar-nav li.active > a {
   color: var(--theme-color);
   font-weight: 600;
@@ -94,6 +30,40 @@
 .sidebar ul li a:hover {
   text-decoration: none;
   color: var(--theme-color);
+}
+
+/* 侧边栏分组标题样式 */
+.sidebar-nav > ul > li > p {
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 15px 0 5px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* 侧边栏子菜单样式 */
+.sidebar-nav ul ul {
+  padding-left: 0;
+}
+
+.sidebar-nav ul ul li {
+  margin: 2px 0;
+}
+
+.sidebar-nav ul ul li a {
+  padding: 3px 0 3px 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.sidebar-nav ul ul li a:hover {
+  color: var(--theme-color);
+  background-color: rgba(66, 185, 131, 0.1);
+}
+
+/* 确保所有子菜单都展开显示 */
+.sidebar-nav ul ul {
+  display: block !important;
 }
 
 /* 目录样式 */
@@ -122,25 +92,6 @@
 .page_toc p.title {
   font-weight: 600;
   margin-bottom: 10px;
-}
-
-/* 内容标题样式 */
-.markdown-section h1 {
-  border-bottom: 1px solid #eaecef;
-  padding-bottom: 0.3em;
-}
-
-.markdown-section h2 {
-  border-bottom: 1px solid #eaecef;
-  padding-bottom: 0.3em;
-}
-
-.markdown-section h3 {
-  color: var(--heading-h3-color);
-}
-
-.markdown-section h4 {
-  color: var(--heading-h4-color);
 }
 
 /* 页脚样式 */
@@ -175,22 +126,6 @@ footer {
 
 .markdown-section code {
   border-radius: 3px;
-}
-
-/* 表格样式 */
-.markdown-section table {
-  display: table;
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.markdown-section th {
-  background-color: #f8f8f8;
-}
-
-.markdown-section tr:nth-child(2n) {
-  background-color: #f8f8f8;
 }
 
 /* 移动设备适配 */
