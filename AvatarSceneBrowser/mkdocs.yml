@@ -10,87 +10,179 @@ edit_uri: edit/main/AvatarSceneBrowser/docs/
 theme:
   name: material
   language: zh
-  custom_dir: overrides
   palette:
-    - scheme: default
-      primary: teal
-      accent: teal
+    # 亮色模式 - 参考Alterith的干净白色风格
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: 切换到暗色模式
-    - scheme: slate
-      primary: teal
-      accent: teal
+    # 暗色模式 - 参考lilEditorToolbox的暗色主题
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: 切换到亮色模式
   features:
+    # 导航功能 - 参考两个网站的导航结构
+    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.path
     - navigation.top
-    - navigation.indexes
+    - navigation.tracking
+    # 搜索功能增强
     - search.highlight
     - search.share
     - search.suggest
+    # 目录功能
     - toc.follow
     - toc.integrate
+    # 内容功能
     - content.code.annotate
     - content.code.copy
+    - content.code.select
     - content.tooltips
+    # 页脚导航
+    - navigation.footer
   font:
-    text: Noto Sans
+    text: Roboto
     code: Roboto Mono
+  icon:
+    logo: material/view-3d
+    repo: fontawesome/brands/github
 
 plugins:
   - search:
-      lang: ja
+      lang: 
+        - zh
+        - en
+        - ja
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - git-revision-date-localized:
-      type: date
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
 
 markdown_extensions:
+  # 代码高亮和语法
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  
+  # 内容增强
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  
+  # 提示框和警告
   - admonition
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  
+  # 表格和列表
+  - tables
+  - def_list
+  - footnotes
+  
+  # 属性和HTML
   - attr_list
   - md_in_html
+  - abbr
+  
+  # 目录
   - toc:
       permalink: true
+      permalink_title: 链接到此章节
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  
+  # 表情符号
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - 主页: index.md
-  - 开始使用: getting-started.md
+  - 主页: 
+    - 概述: index.md
+    - 快速开始: getting-started.md
   - 用户指南:
-      - 安装指南: installation.md
-      - 基本配置: configuration.md
-      - 使用方法: usage.md
-  - 功能模块:
-      - 化身管理: avatar-management.md
-      - 场景浏览: scene-browsing.md
-      - 运行时API: runtime-api.md
-  - 高级功能:
-      - 扩展开发: extension-development.md
-      - 性能优化: performance.md
-      - 集成第三方资源: integration.md
-  - 开发文档:
-      - API参考: api-reference.md
-      - 示例代码: examples.md
-      - 单元测试: unit-testing.md
-  - 常见问题: faq.md
-  - 更新日志: changelog.md
+    - 安装配置: installation.md
+    - 基本设置: configuration.md
+    - 使用教程: usage.md
+  - 核心功能:
+    - 化身管理: avatar-management.md
+    - 场景浏览: scene-browsing.md
+    - 运行时API: runtime-api.md
+  - 开发者文档:
+    - API 参考: api-reference.md
+    - 代码示例: examples.md
+    - 扩展开发: extension-development.md
+  - 帮助支持:
+    - 常见问题: faq.md
+    - 更新日志: changelog.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cynth-mt
+      name: GitHub
+    - icon: fontawesome/solid/envelope
+      link: mailto:contact@cynth-mt.com
+      name: 联系我们
   generator: false
+  analytics:
+    feedback:
+      title: 这个页面有帮助吗？
+      ratings:
+        - icon: material/thumb-up-outline
+          name: 有帮助
+          data: 1
+          note: >-
+            感谢您的反馈！这有助于我们改进文档。
+        - icon: material/thumb-down-outline
+          name: 可以改进
+          data: 0
+          note: >-
+            感谢您的反馈！请通过GitHub Issues告诉我们如何改进。
+  consent:
+    title: Cookie同意
+    description: >- 
+      我们使用cookies来识别您的重复访问和偏好，以及
+      衡量我们文档的有效性和用户是否找到了他们正在寻找的内容。
+      在您同意的情况下，这有助于我们改进文档。
 
-extra_css:
-  - assets/stylesheets/extra.css
-
-copyright: Copyright &copy; 2023-present Cynth-mt 
+copyright: >
+  Copyright &copy; 2023-present <a href="https://github.com/cynth-mt">Cynth-mt</a> –
+  <a href="#__consent">更改Cookie设置</a> 
