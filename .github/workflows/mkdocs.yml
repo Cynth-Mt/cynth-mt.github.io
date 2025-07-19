@@ -47,10 +47,10 @@ jobs:
         cd AvatarSceneBrowser
         mkdocs build --verbose
         
-    - name: Create AvatarSceneBrowser directory in site
+    - name: Create Pages Structure
       run: |
-        mkdir -p site/AvatarSceneBrowser
-        cp -r AvatarSceneBrowser/site/* site/AvatarSceneBrowser/
+        mkdir -p _site/AvatarSceneBrowser
+        cp -r AvatarSceneBrowser/site/* _site/AvatarSceneBrowser/
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -58,12 +58,12 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: site
+        path: _site
 
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}AvatarSceneBrowser/
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
