@@ -1,5 +1,0 @@
-* [🏠 主页](/)
-* [📚 文档](/README.md)
-* [💾 下载](https://github.com/cynth-mt/cynth-mt.github.io/releases)
-* [🔧 API参考](api-reference.md)
-* [❓ 常见问题](faq.md) 
