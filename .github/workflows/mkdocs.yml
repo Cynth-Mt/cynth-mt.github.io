@@ -5,10 +5,14 @@ on:
     branches: [ main ]
     paths: 
       - 'AvatarSceneBrowser/**'
+      - 'index.html'
+      - 'README.md'
   pull_request:
     branches: [ main ]
     paths: 
       - 'AvatarSceneBrowser/**'
+      - 'index.html'
+      - 'README.md'
 
 permissions:
   contents: read
@@ -55,13 +59,30 @@ jobs:
         # 复制现有的根目录文件（保持主页不变）
         if [ -f "index.html" ]; then
           cp index.html deploy_site/
+          echo "✅ Copied index.html to deploy_site/"
+        else
+          echo "❌ index.html not found in root"
         fi
         if [ -f "README.md" ]; then
           cp README.md deploy_site/
+          echo "✅ Copied README.md to deploy_site/"
         fi
         
+        # 检查MkDocs构建结果
+        echo "📁 Contents of AvatarSceneBrowser/site/:"
+        ls -la AvatarSceneBrowser/site/ || echo "❌ AvatarSceneBrowser/site/ not found"
+        
         # 复制MkDocs构建的文件到子目录
-        cp -r AvatarSceneBrowser/site/* deploy_site/AvatarSceneBrowser/
+        if [ -d "AvatarSceneBrowser/site" ] && [ "$(ls -A AvatarSceneBrowser/site)" ]; then
+          cp -r AvatarSceneBrowser/site/* deploy_site/AvatarSceneBrowser/
+          echo "✅ Copied MkDocs site to deploy_site/AvatarSceneBrowser/"
+        else
+          echo "❌ AvatarSceneBrowser/site/ is empty or doesn't exist"
+        fi
+        
+        # 显示最终部署结构
+        echo "📁 Final deployment structure:"
+        find deploy_site -type f | head -20
         
     - name: Setup Pages
       uses: actions/configure-pages@v4

@@ -84,4 +84,6 @@ extra:
       link: https://github.com/cynth-mt
   generator: false
 
-copyright: Copyright &copy; 2023-present Cynth-mt 
+copyright: Copyright &copy; 2023-present Cynth-mt
+
+# Force rebuild - debug deployment 
