@@ -71,7 +71,7 @@ nav:
 
 extra:
   social:
- #   - icon: fontawesome/brands/github
+    - icon: fontawesome/brands/github
       link: https://github.com/cynth-mt
   generator: false 
 
