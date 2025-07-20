@@ -67,23 +67,20 @@ nav:
     - 化身管理: avatar-management.md
     - 场景浏览: scene-browsing.md
     - 运行时API: runtime-api.md
-  - 高级功能:
-    - 扩展开发: extension-development.md
-    - 性能优化: performance.md
-    - 集成第三方资源: integration.md
+
   - 开发文档:
     - API参考: api-reference.md
     - 示例代码: examples.md
     - 单元测试: unit-testing.md
   - 常见问题: faq.md
-  - 更新日志: changelog.md
+  - 更新日志: release_log.md
 
 extra:
   social:
-    - icon: fontawesome/brands/github
+ #   - icon: fontawesome/brands/github
       link: https://github.com/cynth-mt
-  generator: false
+  generator: false 
 
-copyright: Copyright &copy; 2023-present Cynth-mt
+#copyright: Copyright &copy; 2023-present Cynth-mt
 
 # Force rebuild - trigger workflow 20250120
