@@ -64,14 +64,8 @@ nav:
     - 基本配置: configuration.md
     - 使用方法: usage.md
   - 功能模块:
-    - 化身管理: avatar-management.md
     - 场景浏览: scene-browsing.md
     - 运行时API: runtime-api.md
-
-  - 开发文档:
-    - API参考: api-reference.md
-    - 示例代码: examples.md
-    - 单元测试: unit-testing.md
   - 常见问题: faq.md
   - 更新日志: release_log.md
 

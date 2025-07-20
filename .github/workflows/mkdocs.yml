@@ -44,8 +44,8 @@ jobs:
         
     - name: Install dependencies
       run: |
-        pip install mkdocs-material
-        pip install mkdocs-git-revision-date-localized-plugin
+        cd AvatarSceneBrowser
+        pip install -r requirements.txt
         
     - name: Build MkDocs
       run: |
