@@ -1,6 +1,6 @@
-site_name: Avatar Scene Browser
-site_description: Unity化身场景管理插件文档
-site_author: Cynth-mt
+site_name: AvatarSceneBrowserDoc
+site_description: AvatarSceneBrowser插件文档
+site_author: Cyn-thiatMt
 site_url: https://cynth-mt.github.io/AvatarSceneBrowser/
 use_directory_urls: true
 
