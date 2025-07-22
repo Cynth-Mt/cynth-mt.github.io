@@ -25,7 +25,6 @@ theme:
         icon: material/brightness-4
         name: 切换到亮色模式
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.top
@@ -79,11 +78,6 @@ nav:
   - 更新日志: changelog.md
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/cynth-mt
   generator: false
-
-copyright: Copyright &copy; 2023-present Cynth-mt
 
 # Force rebuild - debug deployment 
