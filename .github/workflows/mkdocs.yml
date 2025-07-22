@@ -3,10 +3,11 @@ name: Build and Deploy MkDocs
 on:
   push:
     branches: [ main ]
-    paths: 
-      - 'AvatarSceneBrowser/**'
-      - 'index.html'
-      - 'README.md'
+    # 删除下面的paths限制
+    # paths: 
+    #   - 'AvatarSceneBrowser/**'
+    #   - 'index.html'
+    #   - 'README.md'
   pull_request:
     branches: [ main ]
     paths: 

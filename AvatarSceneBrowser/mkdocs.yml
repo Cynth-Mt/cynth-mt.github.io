@@ -1,93 +1,89 @@
-# 网站基本信息配置
-site_name: Avatar Scene Browser  # 网站标题，显示在浏览器标签页和网站头部
-site_description: Unity化身场景管理插件文档  # 网站描述，用于SEO和搜索引擎
-site_author: Cynth-mt  # 网站作者信息
-site_url: https://cynth-mt.github.io/AvatarSceneBrowser/  # 网站的完整URL地址
-use_directory_urls: true  # 启用目录风格的URL（如 /page/ 而不是 /page.html）
+site_name: Avatar Scene Browser
+site_description: Unity化身场景管理插件文档
+site_author: Cynth-mt
+site_url: https://cynth-mt.github.io/AvatarSceneBrowser/
+use_directory_urls: true
 
-# GitHub仓库相关配置
-repo_name: cynth-mt/cynth-mt.github.io  # GitHub仓库名称，格式为 用户名/仓库名
-repo_url: https://github.com/cynth-mt/cynth-mt.github.io  # GitHub仓库的完整URL
-edit_uri: edit/main/AvatarSceneBrowser/docs/  # 编辑页面的URI路径，用于生成"编辑此页"链接
+repo_name: cynth-mt/cynth-mt.github.io
+repo_url: https://github.com/cynth-mt/cynth-mt.github.io
+edit_uri: edit/main/AvatarSceneBrowser/docs/
 
-# 主题配置
 theme:
-  name: material  # 使用Material主题，这是一个现代化的响应式主题
-  language: zh  # 设置界面语言为中文
-  
-  # 颜色主题配置（支持亮色和暗色模式切换）
+  name: material
+  language: zh
   palette:
-    - scheme: default  # 亮色模式配置
-      primary: teal  # 主要颜色（导航栏、链接等）
-      accent: teal   # 强调色（按钮、选中状态等）
+    - scheme: default
+      primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-7  # 切换按钮的图标（太阳图标）
-        name: 切换到暗色模式  # 切换按钮的提示文本
-    - scheme: slate  # 暗色模式配置
-      primary: teal  # 主要颜色
-      accent: teal   # 强调色
+        icon: material/brightness-7
+        name: 切换到暗色模式
+    - scheme: slate
+      primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-4  # 切换按钮的图标（月亮图标）
-        name: 切换到亮色模式  # 切换按钮的提示文本
-  
-  # 主题功能特性配置
+        icon: material/brightness-4
+        name: 切换到亮色模式
   features:
-   ## - navigation.tabs  # 导航标签页（已注释掉）
-    - navigation.sections  # 启用导航区域分组
-    - navigation.expand    # 默认展开所有导航项
-    - navigation.top       # 添加"返回顶部"按钮
-    - search.highlight     # 搜索结果高亮显示
-    - search.share         # 启用搜索结果分享功能
-    - toc.integrate        # 将目录集成到导航栏中
-    - content.code.annotate  # 启用代码注释功能
-    - content.code.copy    # 启用代码复制按钮
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - content.code.annotate
+    - content.code.copy
 
-# 插件配置
 plugins:
-  - search:  # 搜索插件配置
-      lang: zh  # 搜索语言设置为中文
-  - git-revision-date-localized:  # Git修订日期插件
-      type: date  # 显示日期类型（只显示日期，不显示时间）
+  - search:
+      lang: ja
+  - git-revision-date-localized:
+      type: date
 
-# Markdown扩展配置
 markdown_extensions:
-  - pymdownx.highlight:  # 代码高亮扩展
-      anchor_linenums: true  # 为代码行号添加锚点链接
-  - pymdownx.inlinehilite  # 行内代码高亮
-  - pymdownx.snippets      # 代码片段插入功能
-  - pymdownx.superfences   # 超级围栏，支持更复杂的代码块
-  - pymdownx.tabbed:       # 标签页功能
-      alternate_style: true  # 使用替代样式
-  - pymdownx.details       # 折叠详情块
-  - admonition            # 警告提示框
-  - attr_list             # 属性列表，允许为元素添加CSS类和属性
-  - md_in_html            # 在HTML中使用Markdown
-  - toc:                  # 目录生成
-      permalink: true     # 为标题添加永久链接
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
 
-# 导航结构配置
 nav:
-  - 主页: index.md  # 网站首页
-  - 开始使用: getting-started.md  # 快速入门指南
-  - 用户指南:  # 用户指南分组
-    - 安装指南: installation.md     # 安装说明
-    - 基本配置: configuration.md    # 配置说明
-    - 使用方法: usage.md           # 使用教程
-  - 功能模块:  # 功能模块分组
-    - 场景浏览: scene-browsing.md   # 场景浏览功能说明
-    - 运行时API: runtime-api.md    # API文档
-  - 常见问题: faq.md              # FAQ页面
-  - 更新日志: release_log.md      # 版本更新记录
+  - 主页: index.md
+  - 开始使用: getting-started.md
+  - 用户指南:
+    - 安装指南: installation.md
+    - 基本配置: configuration.md
+    - 使用方法: usage.md
+  - 功能模块:
+    - 化身管理: avatar-management.md
+    - 场景浏览: scene-browsing.md
+    - 运行时API: runtime-api.md
+  - 高级功能:
+    - 扩展开发: extension-development.md
+    - 性能优化: performance.md
+    - 集成第三方资源: integration.md
+  - 开发文档:
+    - API参考: api-reference.md
+    - 示例代码: examples.md
+    - 单元测试: unit-testing.md
+  - 常见问题: faq.md
+  - 更新日志: changelog.md
 
-# 额外配置
 extra:
-  social:  # 社交媒体链接
-    - icon: fontawesome/brands/github  # GitHub图标
-      link: https://github.com/cynth-mt  # GitHub个人主页链接
-  generator: true  # 隐藏"Made with MkDocs"的生成器信息
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cynth-mt
+  generator: false
 
-# 版权信息（已注释掉）
-#copyright: Copyright &copy; 2023-present Cynth-mt
+copyright: Copyright &copy; 2023-present Cynth-mt
 
-# 强制重建触发器 - 用于触发GitHub Actions工作流
-# Force rebuild - trigger workflow 20250120-2
+# Force rebuild - debug deployment 
