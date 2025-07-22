@@ -32,7 +32,7 @@ theme:
   
   # 主题功能特性配置
   features:
-    - navigation.tabs  # 导航标签页（已注释掉）
+   ## - navigation.tabs  # 导航标签页（已注释掉）
     - navigation.sections  # 启用导航区域分组
     - navigation.expand    # 默认展开所有导航项
     - navigation.top       # 添加"返回顶部"按钮
@@ -45,7 +45,7 @@ theme:
 # 插件配置
 plugins:
   - search:  # 搜索插件配置
-      lang: zh  # 搜索语言设置为日语（可能需要改为zh以支持中文搜索）
+      lang: zh  # 搜索语言设置为中文
   - git-revision-date-localized:  # Git修订日期插件
       type: date  # 显示日期类型（只显示日期，不显示时间）
 
