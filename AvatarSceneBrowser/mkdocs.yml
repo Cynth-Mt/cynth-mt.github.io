@@ -90,4 +90,4 @@ extra:
 #copyright: Copyright &copy; 2023-present Cynth-mt
 
 # 强制重建触发器 - 用于触发GitHub Actions工作流
-# Force rebuild - trigger workflow 20250120
+# Force rebuild - trigger workflow 20250120-2
