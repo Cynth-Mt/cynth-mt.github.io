@@ -32,7 +32,7 @@ theme:
   
   # 主题功能特性配置
   features:
-   ## - navigation.tabs  # 导航标签页（已注释掉）
+    - navigation.tabs  # 导航标签页（已注释掉）
     - navigation.sections  # 启用导航区域分组
     - navigation.expand    # 默认展开所有导航项
     - navigation.top       # 添加"返回顶部"按钮
