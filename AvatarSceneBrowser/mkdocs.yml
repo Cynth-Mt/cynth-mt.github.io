@@ -14,7 +14,7 @@ repo_name: Twitter
 theme:
   name: material
   language: zh
-    #… 其他 theme 配置 …
+  # … 其他 theme 配置 …
   icon:
     repo: fontawesome/brands/twitter
   palette:
@@ -69,12 +69,10 @@ nav:
     - 基本配置: configuration.md
     - 使用方法: usage.md
   - 功能模块:
-    - 化身管理: avatar-management.md
     - 场景浏览: scene-browsing.md
     - 运行时API: runtime-api.md
-
   - 常见问题: faq.md
-  - 更新日志: changelog.md
+  - 更新日志: release_log.md
 
 extra:
   generator: true

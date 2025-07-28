@@ -44,4 +44,4 @@ manager.PreviewAvatar("AvatarName");
 
 - 阅读[基本配置](configuration.md)了解更多配置选项
 - 查看[使用方法](usage.md)获取详细的功能使用说明
-- 参考[API文档](api-reference.md)进行高级开发 
+- 参考[API文档](runtime-api.md)进行高级开发 
